@@ -1,58 +1,41 @@
 from distutils.core import setup
 from setuptools import find_packages
-from pathlib import Path
-import os
-import shutil
-import pathlib
-import subprocess
-
-home_dir = Path.home()
-ada_hidden_dir = os.path.join(home_dir , '.ada')
-
-if os.path.exists(ada_hidden_dir):
-    if os.path.isdir(ada_hidden_dir):
-        shutil.rmtree(ada_hidden_dir)
-    else:
-        os.remove(ada_hidden_dir)
-
-shutil.copytree(os.path.join('ada','ui','UI_Files'), ada_hidden_dir)
-
-from sys import platform
-if platform == "linux" or platform == "linux2":
-    raise ValueError('Linux not currently supported')
-elif platform == "darwin":
-    f = open(str(home_dir) + '/.zshenv', 'r')
-    zshenvStr = f.read()
-    f.close()
-    if 'export PATH_TO_ADA' not in zshenvStr:
-        f = open(str(home_dir) + '/.zshenv', 'a')
-        f.write('\n')
-        f.write('# Adding path to ADA\n')
-        f.write('export PATH_TO_ADA="%s"\n'%(str(pathlib.Path(__file__).parent.resolve()) + os.sep))
-        f.close()
-
-    subprocess.call(['chmod 777 buildESP.sh'], shell=True)
-    subprocess.call(['source buildESP.sh'], shell=True)
-
-elif platform == "win32":
-    raise ValueError('Windows not currently supported')
-
 
 LONG_DESCRIPTION = """
-This is an AI assisted design interface for airfoils
+Package for MAE451
 """
 
 LICENSE = """
-No License
+MIT License
+
+Copyright (c) 2025 Cody Karcher
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
 setup(
-    name="ada",
-    description="Package AI assisted design of airfoils",
+    name="mae451",
+    description="Package for MAE451",
     author="Cody Karcher",
     author_email="cody.karcher@gmail.com",
     url="https://github.com/codykarcher",
-    install_requires= ['numpy','scipy','pandas','openai','llama-index','matplotlib','pint','pypdf', 'natsort','PyICU','mpi4py'] , #["numpy", "scipy", "pandas", "matplotlib", "jsmin", "scikit-learn", "dill","cvxopt"],
+    install_requires= ['numpy','scipy','pandas','matplotlib','pint'],
     version="0.0.0",
     packages=find_packages(),
     license=LICENSE,
