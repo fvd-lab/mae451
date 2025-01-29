@@ -6,7 +6,7 @@
 # Assumes you have cloned the repository into the locaiton: /home/$USER/software/mae451
 # Assuems you have a folder /home/$USER/software/MA27/ma21-1.0.0 which contains the MA27 files
 
-cd /home/$USER/software
+cd /Users/$USER/software
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -20,6 +20,8 @@ else
     tar -xvzf ESP126-macos-x86_64.tgz
 fi
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 brew install gcc
 brew install pkg-config
 brew install cmake
@@ -29,22 +31,31 @@ brew install pkg-config
 brew install timelimit
 brew install openmpi
 
-cd /home/$USER/software
+cd /Users/$USER/software
 if [ "$ARCH" = "arm64" ]; then
     curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-MacOSX-arm64.sh
     bash  -p /Users/$USER/software Anaconda3-2024.10-1-MacOSX-arm64.sh
-    cd /home/$USER/software
+    cd /Users/$USER/software
     rm -rf Anaconda3-2024.10-1-MacOSX-arm64.sh
 else
     curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-MacOSX-x86_64.sh 
     bash -p /Users/$USER/software Anaconda3-2024.10-1-MacOSX-x86_64.sh 
-    cd /home/$USER/software
+    cd /Users/$USER/software
     rm -rf Anaconda3-2024.10-1-MacOSX-x86_64.sh
 fi
 
 rm -f /Users/$USER/.zshenv
 cp /Users/$USER/software/mae451/MacOS/zshenv_1.txt /Users/$USER/.zshenv
+chmod 777 /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
+
+export PATH="/Users/$USER/software/anaconda3/bin:$PATH"
+# Corrects PYTHONPATH environment variable
+#export PYTHONPATH=""
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib/python3.12/lib-dynload:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/bin:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib/python3.12/site-packages:$PYTHONPATH"
 
 conda update --all
 conda install -c conda-forge cvxopt
@@ -85,7 +96,9 @@ make install
 
 rm -f /Users/$USER/.zshenv
 cp /Users/$USER/software/mae451/MacOS/zshenv_2.txt /Users/$USER/.zshenv
+chmod 777 /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
+
 
 cd /home/$USER/software/
 pip install -e mae451
