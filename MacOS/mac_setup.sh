@@ -100,6 +100,6 @@ chmod 777 /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
 
 
-cd /home/$USER/software/
+cd /Users/$USER/software/
 pip install -e mae451
 
