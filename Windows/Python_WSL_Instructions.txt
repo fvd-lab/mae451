@@ -27,113 +27,127 @@ Instructions for Windows Users
     
     cd ~
     mkdir software
-    mkdir mae451
-    cd mae451
-    mkdir homework1
-    mkdir project
+    mkdir MAE451
+    cd MAE451
+    mkdir Homework1
+    mkdir Project
     cd ..
     cd software
+    git clone https://github.com/ace-aerospace-lab/mae451.git
 
 
-8.) there is a script on canvas: "get_linux_packages.txt"
+8.) run:
 
-    Place this in /home/USERNAME/software/get_linux_packages.txt
-
-    run:
-
-        mv /home/USERNAME/software/get_linux_packages.txt /home/USERNAME/software/get_linux_packages.sh
-        chmod 777 /home/USERNAME/software/get_linux_packages.sh
-        cd /home/USERNAME/software/
+        cp /home/$USER/software/mae451/Windows/get_linux_packages.txt /home/$USER/software/mae451/Windows/get_linux_packages.sh
+        chmod 777 /home/$USER/software/mae451/Windows/get_linux_packages.sh
+        cd /home/$USER/software/mae451/Windows
         ./get_linux_packages.sh
 
     (you may have to input your pasword and hit {Y, [enter]} a few times)
 
 9.) In the wsl, run: 
 
+    cd /home/$USER/software
     wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 
 (different versions can be found on repo.anaconda.com/archive/)
 
 10.) After the download is finished, run this command in the wsl terminal:
 
+    cd /home/$USER/software
     bash Anaconda3-2024.10-1-Linux-x86_64.sh
 
 At path:
 
-    /home/USERNAME/software/anaconda3
+    /home/$USER/software/anaconda3
+
+(you may have to use your actual username instead of $USER here)
 
 11.) Run the following:
 
+    /home/$USER/software
     rm -rf Anaconda3-2024.06-1-Linux-x86_64.sh 
 
 12.) close WSL windows
 
 13.) run WSL again as adminstrator
 
+14.) run:
+    
+    rm -f /home/$USER/.bash_profile
+    cp /home/$USER/software/mae451/Windows/bash_profile_1.txt /home/$USER/.bash_profile
+    source /home/$USER/.bash_profile
 
-
-
-
-
-
-
-13.) 
-cd /home/USERNAME
-vim .bash_profile
-
-    echo "Hello NAME, Running .bash_profile..."
-
-    export PATH="/home/USERNAME/software/anaconda3/bin:$PATH"
-
-8.) To update all existing packages, run:
+15.) To update all existing packages, run:
 
     conda update --all
 
-
-9.) From the wsl, type:
+16.) If you wish to use VS Code, from the wsl, type:
 
     code .
 
-click checkmark to permantly allow
+(you may also simply open the application)
 
-Say you trust the authors and click the box for all the files in home
+Click checkmark to permantly allow access to the folder
 
-10.) After VSCode opens from the previous command, click the bottom left corner where the arrows are and change to WSL server. You know this worked when it says WSL: Ubuntu in the bottom left corner.
+Click the box for access to all the files in home and say you trust the authors
 
-11.) In the VScode exntension tab (puzzle icon on the left side of the screeN) install wsl extension, python extension, and python debugger, jupyter
+17.) After VSCode opens from the previous command, click the bottom left corner where the arrows are and change to WSL server. You know this worked when it says WSL: Ubuntu in the bottom left corner.
 
-12.) When needed to: Control+Shift+P and type in "interpreter" and change code interpreter
+18.) In the VScode exntension tab (puzzle icon on the left side of the screen) install the following extensions
+    - WSL
+    - Python
+    - Python Debugger
+    - Jupyter
+
+19.) When needed to: Control+Shift+P and type in "interpreter" and change code interpreter. Select "/home/$USER/software/anaconda3/bin"
 
 
-
-
-
-
-
+Installing additional software we will use
+------------------------------------------
+20.) Go to the link:
 https://acdl.mit.edu/ESP/PreBuilts/
 Download the X86 prebuilt
-Put in /home/USERNAME/software
-tar -xvzf /home/USERNAME/software/ESP126-linux-x86_64.tgz
+Put in /home/$USER/software
+run:
+    tar -xvzf /home/$USER/software/ESP126-linux-x86_64.tgz
+    rm -f /home/$USER/.bash_profile
+    cp /home/$USER/software/mae451/Windows/bash_profile_2.txt /home/$USER/.bash_profile
+    source /home/$USER/.bash_profile
 
-mkdir MA27
-put ma27 files there as instructed
+21.) run:
+    
+    cd /home/$USER/software
+    mkdir MA27
+    cp /home/$USER/software/mae451/Windows/ipopt_install_mae451.txt /home/$USER/software/ipopt_install.sh
+    chmod 777 /home/$USER/software/ipopt_install.sh
 
-mv /home/USERNAME/software/ipopt_install_mae451.txt /home/USERNAME/software/ipopt_install.sh
-chmod 777 ipopt_install.sh
+22.) Get an MA27 license from the following website:
+https://www.hsl.rl.ac.uk/download/MA27/1.0.0/
 
-source /home/ckarcher/software/ipopt_install.sh /home/ckarcher/software
-export LD_LIBRARY_PATH=/home/USERNAME/software/ipopt/build/lib/
-
-conda install -c conda-forge cvxopt
-pip install pint
-
-
-
+Put the extracted zip file (ma27-1.0.0) in /home/$USER/software/MA27
+You should have a folder /home/$USER/software/MA27/ma27-1.0.0
 
 
+23.) run the following:
+    
+    source /home/$USER/software/ipopt_install.sh /home/$USER/software
+    export LD_LIBRARY_PATH=/home/$USER/software/ipopt/build/lib/
+    rm -f /home/$USER/.bash_profile
+    cp /home/$USER/software/mae451/Windows/bash_profile_3.txt /home/$USER/.bash_profile
+    source /home/$USER/.bash_profile
+
+24.) run:
+
+    conda install -c conda-forge cvxopt
+    pip install pint
 
 
 
+
+
+#######
+These are for my future reference, you are done now
 
 git clone pyomo repo
 pip install -e on repo

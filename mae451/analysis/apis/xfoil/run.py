@@ -192,9 +192,9 @@ def run(mode,
         Reval   = Re
         Mval    = M
 
-        cpData = pd.read_csv(tempCpDatafile.name, sep="\s+",skiprows=1, names = ['x' , 'cp'])
+        cpData = pd.read_csv(tempCpDatafile.name, sep="\\s+",skiprows=1, names = ['x' , 'cp'])
 
-        blData = pd.read_csv(tempBlDatafile.name, sep="\s+",skiprows=1, names = ['s', 'x', 'y', 'Ue/Vinf', 'Dstar', 'Theta', 'Cf', 'H', 'H*', 'P', 'm', 'K', 'tau', 'Di'])
+        blData = pd.read_csv(tempBlDatafile.name, sep="\\s+",skiprows=1, names = ['s', 'x', 'y', 'Ue/Vinf', 'Dstar', 'Theta', 'Cf', 'H', 'H*', 'P', 'm', 'K', 'tau', 'Di'])
 
         res = {}
         res['cd'] = cd

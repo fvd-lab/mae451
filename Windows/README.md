@@ -13,7 +13,7 @@ Clone the repository using:
 ```shell
 git clone https://github.com/ace-aerospace-lab/mae451.git
 ```
-(see the specific link above and to the right for the most up to date information)
+(see the specific link on the github home page for the most up to date information)
 
 cd to the parent directory
 ```shell
