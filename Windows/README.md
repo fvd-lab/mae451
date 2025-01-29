@@ -1,11 +1,8 @@
-# Github Repository for CSULB MAE451
+# Windows Installation
+Windows users are expected to run WSL for this package.  Instructions for setup are provided in the "Python_WSL_Instructions.txt" file.
 
-This repository is primarily a python package for use in the CSULB MAE 451 course.
-
-There are a few additional folders that are provided for use
-
-## Installation
-Installation instructions are in the individual operating system folders
+## Installation of this package
+Once you have completed the WSL instructions, you can install this package as follows
 
 Change directory to the software folder:
 ```shell

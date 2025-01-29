@@ -1,0 +1,36 @@
+echo "Hello Cody, Running .bash_profile"
+
+export PATH="/home/$USER/software/anaconda3/bin:$PATH"
+
+export PATH="/home/$USER/software/ESP126/EngSketchPad/bin:$PATH"
+
+export PYTHONPATH="/home/$USER/software/anaconda3/lib/python3.12/lib-dynload:$PYTHONPATH"
+export PYTHONPATH="/home/$USER/software/anaconda3/bin:$PYTHONPATH"
+export PYTHONPATH="/home/$USER/software/anaconda3/lib:$PYTHONPATH"
+export PYTHONPATH="/home/$USER/software/anaconda3/lib/python3.12/site-packages:$PYTHONPATH"
+
+export LD_LIBRARY_PATH="/home/$USER/software/ipopt/build/lib/"
+
+# Ipopt path
+PATH="/home/$USER/software/ipopt/build/bin:$PATH"
+
+# Lapack and BLAS
+export DYLD_LIBRARY_PATH="/home/$USER/software/ipopt/build/lib:$DYLD_LIBRARY_PATH"
+export DYLD_LIBRARY_PATH="/home/$USER/software/ipopt/ASL_build/lib:$DYLD_LIBRARY_PATH"
+export DYLD_LIBRARY_PATH="/home/$USER/software/ipopt/HSL_build/lib:$DYLD_LIBRARY_PATH"
+export IPOPT_INCLUDE_DIR="/home/$USER/software/ipopt/build/include/coin-or"
+export IPOPT_LIBRARY_DIR="/home/$USER/software/ipopt/build/lib"
+
+
+
+
+
+sudo apt-get install gcc
+sudo apt-get install g++
+sudo apt-get install gfortran
+sudo apt-get install make
+sudo apt-get install libblas-dev
+sudo apt-get install liblapack-dev
+sudo apt-get install pkgconf
+sudo apt-get install cmake
+sudo apt-get install xinit

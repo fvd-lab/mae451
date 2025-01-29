@@ -1,0 +1,142 @@
+Instructions for Windows Users
+------------------------------
+
+0.) If desired, download Visual Studio Code
+
+    https://code.visualstudio.com/download
+
+1.) Install WSL from admin cmd (ubuntu distribution default) by following these instructions:
+
+2.) Hit windows key and type "cmd", right click application and run as administrator
+
+3.) In the cmd window, run this command:
+
+    wsl --install
+
+3.) Restart computer
+
+4.0) On restart, your computer may open a new WSL window and ask for a username and password
+4.1) (if 4.0 doesn't happen) Log into computer and hit windows key, type "WSL" and open program
+4.2) if wsl not visible or does not open, run the Ubuntu app by hitting windows key and searching for and running the Ubuntu program
+
+5.) In the WSL terminal, create an account if its your first time. This requires you to put a username, hitting enter, then entering the password (NOTE: While typing the password in the terminal, the system is recording the keystrokes but does not show any typed characters [i.e. will appear blank but the password is in there when typed]), hit enter, then confirm the password by typing it again when prompted. 
+
+6.) Close your WSL windows and re-open using the 'Run as Administrator option'
+
+7.) Run the following commands:
+    
+    cd ~
+    mkdir software
+    mkdir mae451
+    cd mae451
+    mkdir homework1
+    mkdir project
+    cd ..
+    cd software
+
+
+8.) there is a script on canvas: "get_linux_packages.txt"
+
+    Place this in /home/USERNAME/software/get_linux_packages.txt
+
+    run:
+
+        mv /home/USERNAME/software/get_linux_packages.txt /home/USERNAME/software/get_linux_packages.sh
+        chmod 777 /home/USERNAME/software/get_linux_packages.sh
+        cd /home/USERNAME/software/
+        ./get_linux_packages.sh
+
+    (you may have to input your pasword and hit {Y, [enter]} a few times)
+
+9.) In the wsl, run: 
+
+    wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+
+(different versions can be found on repo.anaconda.com/archive/)
+
+10.) After the download is finished, run this command in the wsl terminal:
+
+    bash Anaconda3-2024.10-1-Linux-x86_64.sh
+
+At path:
+
+    /home/USERNAME/software/anaconda3
+
+11.) Run the following:
+
+    rm -rf Anaconda3-2024.06-1-Linux-x86_64.sh 
+
+12.) close WSL windows
+
+13.) run WSL again as adminstrator
+
+
+
+
+
+
+
+
+13.) 
+cd /home/USERNAME
+vim .bash_profile
+
+    echo "Hello NAME, Running .bash_profile..."
+
+    export PATH="/home/USERNAME/software/anaconda3/bin:$PATH"
+
+8.) To update all existing packages, run:
+
+    conda update --all
+
+
+9.) From the wsl, type:
+
+    code .
+
+click checkmark to permantly allow
+
+Say you trust the authors and click the box for all the files in home
+
+10.) After VSCode opens from the previous command, click the bottom left corner where the arrows are and change to WSL server. You know this worked when it says WSL: Ubuntu in the bottom left corner.
+
+11.) In the VScode exntension tab (puzzle icon on the left side of the screeN) install wsl extension, python extension, and python debugger, jupyter
+
+12.) When needed to: Control+Shift+P and type in "interpreter" and change code interpreter
+
+
+
+
+
+
+
+https://acdl.mit.edu/ESP/PreBuilts/
+Download the X86 prebuilt
+Put in /home/USERNAME/software
+tar -xvzf /home/USERNAME/software/ESP126-linux-x86_64.tgz
+
+mkdir MA27
+put ma27 files there as instructed
+
+mv /home/USERNAME/software/ipopt_install_mae451.txt /home/USERNAME/software/ipopt_install.sh
+chmod 777 ipopt_install.sh
+
+source /home/ckarcher/software/ipopt_install.sh /home/ckarcher/software
+export LD_LIBRARY_PATH=/home/USERNAME/software/ipopt/build/lib/
+
+conda install -c conda-forge cvxopt
+pip install pint
+
+
+
+
+
+
+
+
+
+git clone pyomo repo
+pip install -e on repo
+pyomo build-extensions
+Make sure to be on the working branch!
+

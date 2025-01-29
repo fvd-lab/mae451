@@ -1,0 +1,97 @@
+# Run script for installing ipopt
+
+# How to run:
+# source /home/USERNAME/software/ipopt_install.sh /home/USERNAME/software
+# example: source /home/ckarcher/software/ipopt_install.sh /home/ckarcher/software
+
+# the /path/to/root MUST NOT have a trailing / character
+# Creates a folder /path/to/root/ipopt which stores all the files:
+#     /home/USERNAME/software/ipopt/ASL_build      -- Built ASL
+#     /home/USERNAME/software/ipopt/build          -- Built Ipopt
+#     /home/USERNAME/software/ipopt/HSL_build      -- Built HSL
+#     /home/USERNAME/software/ipopt/Ipopt          -- Clone of the Ipopt Github Repo 
+#     /home/USERNAME/software/ipopt/ThirdParty-ASL -- Clone of the ThirdParty-ASL Github Repo 
+#     /home/USERNAME/software/ipopt/ThirdParty-HSL -- Clone of the ThirdParty-HSL Github Repo 
+
+# STEP 1
+# ------
+# Get the MA27 License
+# https://www.hsl.rl.ac.uk/download/MA27/1.0.0/
+
+# STEP 2
+# ------
+# Download zip
+
+# STEP 3
+# ------
+# mkdir /home/ckarcher/software/MA27
+# Put the extracted zip file (ma27-1.0.0) in this location
+# you should have a folder /home/ckarcher/software/MA27/ma27-1.0.0
+
+
+# STEP 4
+# ------
+
+tmp_pwd=$(pwd)
+
+export TEMP_PATH=$1
+
+mkdir $1/ipopt
+cd $1/ipopt
+git clone https://github.com/coin-or/Ipopt.git
+git clone https://github.com/coin-or-tools/ThirdParty-ASL.git
+git clone https://github.com/coin-or-tools/ThirdParty-HSL.git
+
+cd $1/ipopt/ThirdParty-ASL
+./get.ASL
+
+mkdir $1/ipopt/ASL_build
+cd $1/ipopt/ThirdParty-ASL
+./configure --prefix=$1/ipopt/ASL_build
+make install
+
+cd $1/ipopt/ThirdParty-HSL
+mkdir coinhsl
+cp -a $1/MA27/ma27-1.0.0/. $1/ipopt/ThirdParty-HSL/coinhsl
+mv $1/ipopt/ThirdParty-HSL/coinhsl/src $1/ipopt/ThirdParty-HSL/coinhsl/ma27
+
+cd $1/ipopt
+mkdir HSL_build
+cd $1/ipopt/ThirdParty-HSL
+./configure --prefix=$1/ipopt/HSL_build
+make install
+
+cd $1/ipopt/Ipopt
+mkdir $1/ipopt/build
+./configure --prefix=$1/ipopt/build  --with-asl-lflags="-L$1/ipopt/ASL_build/lib -lcoinasl" --with-hsl-lflags="-L$1/ipopt/HSL_build/lib -lcoinhsl" --disable-java --with-asl-cflags="-I$1/ipopt/ASL_build/include/coin-or/asl" --with-hsl-cflags="-I$1/ipopt/HSL_build/include/coin-or/hsl"
+
+make
+make test
+make install
+
+cd $tmp_pwd
+
+# STEP 5
+# ------
+
+echo ""
+echo ""
+echo ""
+echo "REMEMBER TO UPDATE YOUR .bash_profile OR EQUIVALENT FILE"
+echo "You can uncomment STEP 5 in the ipopt_install.sh file to auto-append"
+echo ""
+echo ""
+echo ""
+
+
+## Uncomment to append the relevant path information to your .bash_profile file
+# printf '\n' >> ~/.bash_profile
+# printf '# Ipopt path settings \n' >> ~/.bash_profile
+# printf 'PATH="$TEMP_PATH/ipopt/build/bin:$PATH" \n' >> ~/.bash_profile
+# printf 'export DYLD_LIBRARY_PATH="$TEMP_PATH/ipopt/build/lib:$DYLD_LIBRARY_PATH" \n' >> ~/.bash_profile
+# printf 'export DYLD_LIBRARY_PATH="$TEMP_PATH/ipopt/ASL_build/lib:$DYLD_LIBRARY_PATH" \n' >> ~/.bash_profile
+# printf 'export DYLD_LIBRARY_PATH="$TEMP_PATH/ipopt/HSL_build/lib:$DYLD_LIBRARY_PATH" \n' >> ~/.bash_profile
+# printf 'export IPOPT_INCLUDE_DIR="$TEMP_PATH/ipopt/build/include/coin-or" \n' >> ~/.bash_profile
+# printf 'export IPOPT_LIBRARY_DIR="$TEMP_PATH/ipopt/build/lib" \n' >> ~/.bash_profile
+
+
