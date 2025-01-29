@@ -2,6 +2,11 @@
 Mac installation is very straightforward
 
 ## Installation of this package
+Download VS Code if desired:
+```
+https://code.visualstudio.com/download
+```
+
 Download and install XQuartz:
 ```
 https://www.xquartz.org
@@ -13,14 +18,15 @@ mkdir /Users/$USER/software
 ```
 
 Get an MA27 license from the following website:
+```
 https://www.hsl.rl.ac.uk/download/MA27/1.0.0/
+```
 
-Put the extracted zip file (ma27-1.0.0) in /home/$USER/software/MA27
 Make a software folder:
 ```shell
 mkdir /Users/$USER/software/MA27
 ```
-You should have a folder /home/$USER/software/MA27/ma27-1.0.0
+and Put the extracted zip file (ma27-1.0.0) in `/Users/$USER/software/MA27`.  You should have a folder `/Users/$USER/software/MA27/ma27-1.0.0`
 
 Change directory to the software folder:
 ```shell
