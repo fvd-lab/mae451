@@ -86,3 +86,7 @@ make install
 rm -f /Users/$USER/.zshenv
 cp /Users/$USER/software/mae451/MacOS/zshenv_2.txt /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
+
+cd /home/$USER/software/
+pip install -e mae451
+
