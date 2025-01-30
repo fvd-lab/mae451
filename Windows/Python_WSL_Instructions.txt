@@ -22,6 +22,12 @@ Instructions for Windows Users
 5.) In the WSL terminal, create an account if its your first time. This requires you to put a username, hitting enter, then entering the password (NOTE: While typing the password in the terminal, the system is recording the keystrokes but does not show any typed characters [i.e. will appear blank but the password is in there when typed]), hit enter, then confirm the password by typing it again when prompted. 
 
 6.) Close your WSL windows and re-open using the 'Run as Administrator option'
+6.1) When you open WSL, you should see on the left side of the screen your user name.  If you instead see "root", do the following:
+    Press the Windows key and open a "Power Shell"
+    Run the following command in Power Shell:
+        ubuntu config --default-user <your-username>
+
+    (replace <your-username> with your WSL username from step 4 or 5)
 
 7.) Run the following commands:
     
