@@ -1,5 +1,6 @@
 Instructions for Windows Users
 ------------------------------
+-1.) Update your computer in the Windows->Settings menu of your computer
 
 0.) If desired, download Visual Studio Code
 
