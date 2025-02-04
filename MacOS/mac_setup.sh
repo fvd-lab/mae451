@@ -46,7 +46,6 @@ fi
 
 rm -f /Users/$USER/.zshenv
 cp /Users/$USER/software/mae451/MacOS/zshenv_1.txt /Users/$USER/.zshenv
-chmod 777 /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
 
 export PATH="/Users/$USER/software/anaconda3/bin:$PATH"
@@ -96,7 +95,6 @@ make install
 
 rm -f /Users/$USER/.zshenv
 cp /Users/$USER/software/mae451/MacOS/zshenv_2.txt /Users/$USER/.zshenv
-chmod 777 /Users/$USER/.zshenv
 source /Users/$USER/.zshenv
 
 
