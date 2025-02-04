@@ -78,8 +78,8 @@ Instructions for Windows Users
 14.) run:
     
     rm -f /home/$USER/.bash_profile
-    cp /home/$USER/software/mae451/Windows/bash_profile_1.txt /home/$USER/.bash_profile
-    source /home/$USER/.bash_profile
+    chmod 777 /home/$USER/software/mae451/Windows/create_bash_profile_1.sh
+    bash /home/$USER/software/mae451/Windows/create_bash_profile_1.sh
 
 15.) To update all existing packages, run:
 
@@ -115,8 +115,8 @@ Put in /home/$USER/software
 run:
     tar -xvzf /home/$USER/software/ESP126-linux-x86_64.tgz
     rm -f /home/$USER/.bash_profile
-    cp /home/$USER/software/mae451/Windows/bash_profile_2.txt /home/$USER/.bash_profile
-    source /home/$USER/.bash_profile
+    chmod 777 /home/$USER/software/mae451/Windows/create_bash_profile_2.sh
+    bash /home/$USER/software/mae451/Windows/create_bash_profile_2.sh
 
 21.) run:
     
@@ -137,8 +137,9 @@ You should have a folder /home/$USER/software/MA27/ma27-1.0.0
     source /home/$USER/software/ipopt_install.sh /home/$USER/software
     export LD_LIBRARY_PATH=/home/$USER/software/ipopt/build/lib/
     rm -f /home/$USER/.bash_profile
-    cp /home/$USER/software/mae451/Windows/bash_profile_3.txt /home/$USER/.bash_profile
-    source /home/$USER/.bash_profile
+    chmod 777 /home/$USER/software/mae451/Windows/create_bash_profile_3.sh
+    bash /home/$USER/software/mae451/Windows/create_bash_profile_3.sh
+
 
 24.) run:
 
