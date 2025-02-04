@@ -1,16 +1,16 @@
 # How to run:
-# source /home/$USER/software/mae451/MacOS/mac_setup.sh
+# source /Users/$USER/software/mae451/MacOS/mac_setup.sh
 
 # setup folders
-# Assumes you have a folder /home/$USER/software
-# Assumes you have cloned the repository into the locaiton: /home/$USER/software/mae451
-# Assuems you have a folder /home/$USER/software/MA27/ma21-1.0.0 which contains the MA27 files
+# Assumes you have a folder /Users/$USER/software
+# Assumes you have cloned the repository into the locaiton: /Users/$USER/software/mae451
+# Assuems you have a folder /Users/$USER/software/MA27/ma21-1.0.0 which contains the MA27 files
 
 cd /Users/$USER/software
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-cd /home/$USER/software
+cd /Users/$USER/software
 
 if [ "$ARCH" = "arm64" ]; then
     curl -O https://acdl.mit.edu/ESP/PreBuilts/ESP126-macos-arm64.tgz
