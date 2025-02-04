@@ -42,6 +42,10 @@ git clone https://github.com/ace-aerospace-lab/mae451.git
 Then run the setup file:
 ```shell
 cd /Users/$USER/software/mae451/MacOS
-chmod 777 /Users/$USER/software/mae451/MacOS/setup.sh
+```
+```shell
+chmod 777 /Users/$USER/software/mae451/MacOS/mac_setup.sh
+```
+```shell
 source /Users/$USER/software/mae451/MacOS/mac_setup.sh
 ```
