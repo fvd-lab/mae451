@@ -68,8 +68,8 @@ Instructions for Windows Users
 
 11.) Run the following:
 
-    /home/$USER/software
-    rm -rf Anaconda3-2024.06-1-Linux-x86_64.sh 
+    cd /home/$USER/software
+    rm -rf Anaconda3-2024.10-1-Linux-x86_64.sh 
 
 12.) close WSL windows
 
