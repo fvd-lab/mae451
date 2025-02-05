@@ -133,7 +133,9 @@ You should have a folder /home/$USER/software/MA27/ma27-1.0.0
 
 
 23.) run the following:
-    
+
+    cp /home/$USER/software/mae451/Windows/ipopt_install_mae451.txt /home/$USER/software/ipopt_install.sh
+    chmod 777 /home/$USER/software/ipopt_install.sh
     source /home/$USER/software/ipopt_install.sh /home/$USER/software
     export LD_LIBRARY_PATH=/home/$USER/software/ipopt/build/lib/
     rm -f /home/$USER/.bash_profile
