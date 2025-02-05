@@ -1,3 +1,4 @@
+import sys
 import subprocess
 import warnings
 import tempfile
@@ -164,6 +165,14 @@ def run(mode,
 
     cmd = ''
     cmd += 'timelimit -t%d '%(timeout)
+    if sys.platform == 'linux' or sys.platform=='linux2':
+        cmd += 'timeout 2 '
+    elif sys.platform == 'darwin':
+        cmd += 'timelimit -t2 '
+    else:
+        # Default to linux, may throw error
+        cmd += 'timeout 2 '
+
     cmd += path_to_XFOIL
     cmd += ' <' + tempExecFile.name
     cmd += ' >' + tempStdoutFile.name
