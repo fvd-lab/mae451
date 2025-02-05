@@ -16,5 +16,4 @@ printf 'export IPOPT_INCLUDE_DIR="/home/$USER/software/ipopt/build/include/coin-
 printf 'export IPOPT_LIBRARY_DIR="/home/$USER/software/ipopt/build/lib" \n' >> /home/$USER/bash_profile_3w.txt
 
 mv /home/$USER/bash_profile_3w.txt /home/$USER/.bash_profile
-rm /home/$USER/bash_profile_3w.txt
 source /home/$USER/.bash_profile

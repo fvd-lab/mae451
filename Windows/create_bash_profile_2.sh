@@ -9,5 +9,4 @@ printf 'export PYTHONPATH="/home/$USER/software/anaconda3/lib:$PYTHONPATH "\n' >
 printf 'export PYTHONPATH="/home/$USER/software/anaconda3/lib/python3.12/site-packages:$PYTHONPATH "\n' >> /home/$USER/bash_profile_2w.txt
 
 mv /home/$USER/bash_profile_2w.txt /home/$USER/.bash_profile
-rm /home/$USER/bash_profile_2w.txt
 source /home/$USER/.bash_profile
