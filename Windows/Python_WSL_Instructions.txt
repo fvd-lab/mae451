@@ -147,6 +147,8 @@ You should have a folder /home/$USER/software/MA27/ma27-1.0.0
 
     conda install -c conda-forge cvxopt
     pip install pint
+    cd /home/$USER/software
+    pip install -e mae451
 
 
 
