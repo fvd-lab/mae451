@@ -164,7 +164,6 @@ def run(mode,
     # proc.stdin.write(estr.encode())
 
     cmd = ''
-    cmd += 'timelimit -t%d '%(timeout)
     if sys.platform == 'linux' or sys.platform=='linux2':
         cmd += 'timeout 2 '
     elif sys.platform == 'darwin':
