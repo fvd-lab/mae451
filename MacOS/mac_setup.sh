@@ -34,12 +34,12 @@ brew install openmpi
 cd /Users/$USER/software
 if [ $(arch) = "arm64" ]; then
     curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-MacOSX-arm64.sh
-    bash  -p /Users/$USER/software Anaconda3-2024.10-1-MacOSX-arm64.sh
+    bash /Users/$USER/software/Anaconda3-2024.10-1-MacOSX-arm64.sh -p /Users/$USER/software/anaconda3
     cd /Users/$USER/software
     rm -rf Anaconda3-2024.10-1-MacOSX-arm64.sh
 else
     curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-MacOSX-x86_64.sh 
-    bash -p /Users/$USER/software Anaconda3-2024.10-1-MacOSX-x86_64.sh 
+    bash /Users/$USER/software/Anaconda3-2024.10-1-MacOSX-x86_64.sh -p /Users/$USER/software/anaconda3
     cd /Users/$USER/software
     rm -rf Anaconda3-2024.10-1-MacOSX-x86_64.sh
 fi
