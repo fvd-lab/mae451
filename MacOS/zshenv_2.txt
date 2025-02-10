@@ -6,6 +6,7 @@ export PATH="/Users/$USER/software/ESP126/EngSketchPad/bin:$PATH"
 # Sets the path to look first in the miniconda folder for python
 # Must come after ESP stuff so the correct python is used
 export PATH="/Users/$USER/software/anaconda3/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Corrects PYTHONPATH environment variable
 export PYTHONPATH="/Users/$USER/software/miniconda3/lib/python3.12/lib-dynload:$PYTHONPATH"
