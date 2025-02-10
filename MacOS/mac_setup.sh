@@ -12,7 +12,7 @@ cd /Users/$USER/software
 
 cd /Users/$USER/software
 
-if [ "$ARCH" = "arm64" ]; then
+if [ $(arch) = "arm64" ]; then
     curl -O https://acdl.mit.edu/ESP/PreBuilts/ESP126-macos-arm64.tgz
     tar -xvzf ESP126-macos-arm64.tgz
 else
@@ -32,7 +32,7 @@ brew install timelimit
 brew install openmpi
 
 cd /Users/$USER/software
-if [ "$ARCH" = "arm64" ]; then
+if [ $(arch) = "arm64" ]; then
     curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-MacOSX-arm64.sh
     bash  -p /Users/$USER/software Anaconda3-2024.10-1-MacOSX-arm64.sh
     cd /Users/$USER/software
