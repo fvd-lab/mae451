@@ -9,10 +9,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Users/$USER/software/anaconda3/bin:$PATH"
 
 # Corrects PYTHONPATH environment variable
-export PYTHONPATH="/Users/$USER/software/miniconda3/lib/python3.12/lib-dynload:$PYTHONPATH"
-export PYTHONPATH="/Users/$USER/software/miniconda3/bin:$PYTHONPATH"
-export PYTHONPATH="/Users/$USER/software/miniconda3/lib:$PYTHONPATH"
-export PYTHONPATH="/Users/$USER/software/miniconda3/lib/python3.12/site-packages:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib/python3.12/lib-dynload:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/bin:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib:$PYTHONPATH"
+export PYTHONPATH="/Users/$USER/software/anaconda3/lib/python3.12/site-packages:$PYTHONPATH"
 
 # adds genuine gcc alias
 alias g++-12="/opt/homebrew/bin/g++-12"
