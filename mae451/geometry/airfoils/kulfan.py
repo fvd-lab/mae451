@@ -1150,6 +1150,9 @@ class Kulfan(Profile):
 
         try:
             origin_loc = np.intersect1d(psi_idx,zeta_idx)[0]
+            if np.argmin(raw_psi) != origin_loc:
+                print('WARNING: Corrupt airfoil geometry, verify the output')
+                raise ValueError('Corrupt airfoil geometry')
         except:
             ix_psimin = np.argmin(raw_psi)
             raw_psi -= raw_psi[ix_psimin]
