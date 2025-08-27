@@ -89,6 +89,7 @@ Instructions for Windows Users
     rm -f /home/$USER/.bash_profile
     chmod 777 /home/$USER/software/mae451/Windows/create_bash_profile_1.sh
     bash /home/$USER/software/mae451/Windows/create_bash_profile_1.sh
+    source /home/$USER/software/mae451/Windows/create_bash_profile_1.sh
 
 15.) To update all existing packages, run:
 
@@ -144,6 +145,7 @@ git clone pyomo repo
 pip install -e on repo
 pyomo build-extensions
 Make sure to be on the working branch!
+
 
 
 
