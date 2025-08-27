@@ -1,5 +1,5 @@
 # Mac Installation
-Mac installation is very straightforward
+Mac installation is fairly straightforward
 
 ## Installation of this package
 Download Xcode from the App Store
