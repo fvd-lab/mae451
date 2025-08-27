@@ -2,6 +2,18 @@
 Mac installation is very straightforward
 
 ## Installation of this package
+Download Xcode from the App Store
+
+Open a Terminal window and install the Xcode Developer Tools using:
+```shell
+xcode-select --install
+```
+
+Install Homebrew (https://brew.sh/):
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Download VS Code if desired:
 ```
 https://code.visualstudio.com/download
