@@ -123,6 +123,7 @@ https://acdl.mit.edu/ESP/PreBuilts/
 Download the X86 prebuilt
 Put in /home/$USER/software
 run:
+    cd /home/$USER/software
     tar -xvzf /home/$USER/software/ESP128-linux-x86_64.tgz
     rm -f /home/$USER/.bash_profile
     chmod 777 /home/$USER/software/mae451/Windows/create_bash_profile_2.sh
@@ -146,6 +147,7 @@ git clone pyomo repo
 pip install -e on repo
 pyomo build-extensions
 Make sure to be on the working branch!
+
 
 
 
