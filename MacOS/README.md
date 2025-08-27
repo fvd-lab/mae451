@@ -35,7 +35,7 @@ cd /Users/$USER/software
 
 Clone the repository using: 
 ```shell
-git clone https://github.com/ace-aerospace-lab/mae451.git
+git clone https://github.com/fvd-lab/mae451.git
 ```
 (see the specific link on the github home page for the most up to date information)
 
