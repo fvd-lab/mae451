@@ -8,7 +8,16 @@ Instructions for Windows Users
 
 1.) Install WSL from admin cmd (ubuntu distribution default) by following these instructions:
 
-2.) Hit windows key and type "cmd", right click application and run as administrator
+2a.) Hit windows key and type "cmd", right click application and run as administrator
+
+2b.) Enable windows features for WSL:
+    Press Win + S, type Turn Windows features on or off, and select it.
+
+    Check the boxes for:
+        Windows Subsystem for Linux
+        Virtual Machine Platform
+        Windows Hypervisor Platform (optional, but recommended for WSL2)
+        If Hyper-V is available (not on Windows 11 Home), enable it.
 
 3.) In the cmd window, run this command:
 
@@ -135,5 +144,6 @@ git clone pyomo repo
 pip install -e on repo
 pyomo build-extensions
 Make sure to be on the working branch!
+
 
 
